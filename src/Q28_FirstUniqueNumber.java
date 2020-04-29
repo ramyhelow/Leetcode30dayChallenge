@@ -11,7 +11,7 @@ public class Q28_FirstUniqueNumber {
         Set<Integer> removedNumbers;
 
         public FirstUnique(int[] nums) {
-            queue = new HashSet<>();
+            queue = new LinkedHashSet<>();
             removedNumbers = new HashSet<>();
             for (int num: nums) {
                 add(num);
@@ -19,8 +19,7 @@ public class Q28_FirstUniqueNumber {
         }
 
         public int showFirstUnique() {
-            if(queue.size()>0) return queue.iterator().next();
-            else return -1;
+            return (queue.size() > 0) ? queue.iterator().next() : -1;
         }
 
         public void add(int value) {
